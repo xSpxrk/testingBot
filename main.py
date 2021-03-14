@@ -21,7 +21,7 @@ async def send_help(message: types.Message):
     """
     This handler will be called when user sends '/help' command
     """
-    await message.reply("I almost do nothing but I'll be a good bot soon")
+    await message.reply("I can repeat your text message and stickers")
 
 
 @dp.message_handler()
