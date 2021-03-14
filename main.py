@@ -27,9 +27,19 @@ async def send_help(message: types.Message):
 @dp.message_handler()
 async def echo(message: types.Message):
     """
-    This is echo handler
+    This is echo text handler
     """
     await message.answer(message.text)
+
+
+@dp.message_handler(content_types=types.ContentType.STICKER)
+async def take_message(message: types.Message):
+    """
+    This is echo sticker handler
+    """
+    file_id = getattr(message, 'sticker').file_id
+    user_id = message.from_user.id
+    await bot.send_sticker(user_id, file_id)
 
 
 if __name__ == '__main__':
