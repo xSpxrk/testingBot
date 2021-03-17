@@ -13,6 +13,6 @@ class SQL:
         with self.connection:
             self.cursor.execute("INSERT INTO 'Pictures' ('File_id') VALUES (?)", (file_id,))
 
-    def get_pic(self, tag):
+    def get_pic(self):
         with self.connection:
             return self.cursor.execute("SELECT File_id FROM Pictures").fetchall()
